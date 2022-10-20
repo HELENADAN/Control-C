@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+int day,month,year;
+
+void main(){
+    
+        
+        printf("day=");scanf("%i",&day);
+        
+        printf("month=");scanf("%i",&month);
+        
+        printf("year=");scanf("%i",&year);
+        
+        if ((day != 0 && day <= 31) && (month == 1) && (year >= 100)) {
+            printf("\n %i января %i",day,year);
+        } else if ((day != 0 && day <= 28) && (month == 2) && (year >= 100)) {
+            printf("\n %i февраля %i",day,year);
+        } else if ((day != 0 && day <= 31) && (month == 3) && (year >= 100)) {
+            printf("\n %i марта %i",day,year);
+        } else if ((day != 0 && day <= 30) && (month == 4) && (year >= 100)) {
+            printf("\n %i апреля %i",day,year);
+        } else if ((day != 0 && day <= 31) && (month == 5) && (year >= 100)) {
+            printf("\n %i мая %i",day,year);
+        } else if ((day != 0 && day <= 30) && (month == 6) && (year >= 100)) {
+            printf("\n %i июня %i",day,year);
+        } else if ((day != 0 && day <= 31) && (month == 7) && (year >= 100)) {
+            printf("\n %i июля %i",day,year);
+        } else if ((day != 0 && day <= 31) && (month == 8) && (year >= 100)) {
+            printf("\n %i августа %i",day,year);
+        } else if ((day != 0 && day <= 30) && (month == 9) && (year >= 100)) {
+            printf("\n %i сентября %i",day,year);
+        } else if ((day != 0 && day <= 31) && (month == 10) && (year >= 100)) {
+            printf("\n %i октября %i",day,year);
+        } else if ((day != 0 && day <= 30) && (month == 11) && (year >= 100)) {
+            printf("\n %i ноября %i",day,year);
+        } else if ((day != 0 && day <= 31) && (month == 12) && (year >= 100)) {
+            printf("\n %i декабря %i",day,year);
+        } else {
+            printf("\n Такой даты не существует.");
+        }
+}
