@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+float a,b,c;
+
+void main ()
+{
+    printf("\nВведите первое число:\n");
+    printf("a="); scanf("%f",&a);
+    printf("\nВведите второе число:\n");
+    printf("b="); scanf("%f",&b);
+    printf("\nВведите третье число:\n");
+    printf("c="); scanf("%f",&c);
+    
+    if ((a>0) && (b>0) && (c>0) && ((a+b)>c) && ((a+c)>b) && ((b+c)>a)) {
+        
+        printf("\nТреугольник со сторонами %5.2f,%5.2f,%5.2f существует.\n", a, b, c);
+        if ((a==b)&&(a==c)) {
+            printf("\nТреугольник равноcторонний.\n");
+        } else {
+            if ((a==b)||(a==c)||(b==c)){
+                printf("\nТреугольник равнобедренный.\n");
+            } else {
+                printf("\nТреугольник разноcторонний.\n");
+            }
+        }
+        
+        if ((pow(a,2) == (pow(b,2)+ pow(c,2))) || (pow(b,2) == (pow(a,2) + pow(c,2))) || (pow(c,2) == (pow(b,2)+pow(a,2)))) {
+            printf("\nТреугольник прямоугольный.\n");
+        } else if  ((pow(a,2) > (pow(b,2)+ pow(c,2))) || (pow(b,2) > (pow(a,2) + pow(c,2))) || (pow(c,2) > (pow(b,2)+pow(a,2)))) { 
+           printf("\nТреугольник тупоугольный.\n");
+        } else {
+            printf("\nТреугольник остроугольный.\n");
+        } 
+        
+    } 
+    
+    else {
+        printf("\nТреугольник со сторонами %5.2f,%5.2f,%5.2f не существует.\n", a, b, c);
+    }
+}
+
