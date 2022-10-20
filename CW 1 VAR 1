@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+float A1,B1,C1,A2,B2,C2,X,Y;
+
+void main(){
+    printf("\nВведите коэффициент А1\n");
+    printf("A1=");scanf("%f",&A1);
+    printf("\nВведите коэффициент B1\n");
+    printf("B1=");scanf("%f",&B1);
+    printf("\nВведите коэффициент C1\n");
+    printf("C1=");scanf("%f",&C1);
+    printf("\nВведите коэффициент А2\n");
+    printf("A2=");scanf("%f",&A2);
+    printf("\nВведите коэффициент B2\n");
+    printf("B2=");scanf("%f",&B2);
+    printf("\nВведите коэффициент C2\n");
+    printf("C2=");scanf("%f",&C2);
+    
+    
+    if (((A1==0)&&(B1==0)) || ((A2==0)&&(B2==0)))
+    
+        printf("\nОдна из прямых не существует.\n");
+
+    else
+    {
+
+        if (((A2/A1)==(B2/B1)) && ((B2/B1)==(C2/C1)) && ((A2/A1)==(C2/C1))) 
+        {
+            printf("\nПрямые совпадают.\n");
+        }
+            else
+            {
+                X=((C1*B2) - (C2*B1))/((A2*B1)-(A1*B2));
+                Y=((-A1*X)-C1)/B1;
+        
+                printf("\nПрямые пересекаются.\n");
+                printf("\nX=\n %1.2f",X);
+                printf("\nY=\n %1.2f",Y);
+            }
+    }
+}
