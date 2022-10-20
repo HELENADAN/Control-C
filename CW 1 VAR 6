@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+
+float S_circle,S_square,a,r,d;
+
+const float pi = 3.14;
+
+void main(){
+    
+    printf("\nВведите площадь круга:\n");
+    printf("S_circle=");scanf("%f",&S_circle);
+    printf("\nВведите площадь квадрата:\n");
+    printf("S_square=");scanf("%f",&S_square);
+    
+    //Найдем сторону квадрата а 
+    a = sqrt(S_square);
+    //Найдем радиус круга r 
+    r = sqrt(S_circle/pi);
+    //Найдем диаметр круга d
+    d = 2*r;
+    
+    if (d==a){
+        printf("\nКруг площадью %5.2f можно вписать в квадрат площадью %5.2f", S_circle, S_square);
+    } else{
+        printf("\nКруг площадью %5.2f нельзя вписать в квадрат площадью %5.2f", S_circle, S_square);
+    }
+    
+    if (r>=(a/sqrt(2))){
+        printf("\nКруг площадью %5.2f можно описать вокруг квадрата площадью %5.2f", S_circle, S_square);
+    } else{
+        printf("\nКруг площадью %5.2f нельзя описать вокруг квадрата площадью %5.2f", S_circle, S_square);
+    }
+}
+
