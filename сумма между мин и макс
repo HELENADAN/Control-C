@@ -1,0 +1,72 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+
+int max(int (& arr)[100]) {
+    int max = 0;
+    for (int i = 0; i < 100; i++) {
+        if (arr[i] > max)
+            max = arr[i];
+    }
+    return max;
+}
+int min(int (& arr)[100]) {
+    int min = 9999999;
+    for (int i = 0; i < 100; i++) {
+        if (arr[i] < min)
+            min = arr[i];
+    }
+    return min;
+}
+int main()
+{
+    setlocale(0,"");
+    int mins, maxs;
+    int n = 100;
+    int arr[100] = { 18796,   21660,   11009,   30823,   13604,   3089,    11275,   14668,   30635,   16667,   29266,   9347,    12576, 23821,
+                     940,     15637,   28450,   10709,   1052,    8021,    13295,   22019,   22547,   16686,   91,   16828,   1704,  19304,    
+                     31010,   8138,    12618,   18898,   16599,   25311,   19630,   12278,   12980,   14508,   32618,      20476,   4798,  1141,
+                     15094,   28757,   4197,    16858,   1689,    26543,   6448,    7730,    32525,   6021,    15606,   24645,   23270, 7948,      
+                     11530,   13423,   14375,   25909,   25499,   3372,    16859,   28821,   6982,    24325,   20227,   31050,   18401, 32582,      
+                     11698,   30815,   13034,    6212,   15155,   25505,   22553,   3351,    25561,   14222,   18671,   29179,   5952,  24166,    
+                     17988,   4789,    11859,    8984,   20122,   19608,   14146,   22215,   29025,   12036,   8944,    284,     21646, 3397,
+                     23423,   20843 };
+
+    /*   
+    srand(time(NULL));
+    for (int i = 0; i < n; i++) {
+        arr[i] = rand();
+        cout << arr[i] << "\t";
+    }*/
+    
+    mins = min(arr);
+    maxs = max(arr);
+    cout << "mins = " << mins << " maxs = " << maxs << endl;
+
+    int count = 0;
+    int maxs_i, mins_i;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == maxs){
+             maxs_i = i;
+        }
+        if (arr[i] == mins) {
+             mins_i = i;
+        }
+    }
+    
+
+    if (maxs_i > mins_i) {
+        int temp = mins_i;
+        mins_i = maxs_i;
+        maxs_i = temp;
+    }
+        
+    for (int i = maxs_i; i <= mins_i; i++) {
+        cout << arr[i] << " ";
+        count += arr[i];
+        cout << endl;
+    }
+    cout << "count = " << count;
+}
