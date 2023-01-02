@@ -1,0 +1,36 @@
+#include <iostream>
+#include <math.h>
+
+double s(double x0, double y0, double x1, double y1, double x2, double y2) {
+
+		double d1 = sqrt(pow(x1 - x0, 2) + pow(y1 - y0, 2));
+		double d2 = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+		double d3 = sqrt(pow(x0 - x2, 2) + pow(y0 - y2, 2));
+		double p_2 = ((d1 + d2 + d3) / 2);
+		double p_2_d1 = p_2 - d1;
+		double p_2_d2 = p_2 - d2;
+		double p_2_d3 = p_2 - d3;
+		double s = sqrt(p_2 * p_2_d1 * p_2_d2  * p_2_d3);
+		return s;
+}
+
+int main(){
+	double x0, y0, x1, y1, x2, y2, sum = 0;
+	int n = 5;
+	double arr[5][2] = { {0,2},{3,5},{6,5},{9,2},{4,0} };
+
+    x0 = arr[0][0];
+    y0 = arr[0][1];
+	for (int i = 1; i < n - 1; i++) {
+				
+		x1 = arr[i][0];
+		y1 = arr[i][1];
+
+		x2 = arr[i + 1][0];
+		y2 = arr[i + 1][1];
+
+		sum += s(x0, y0, x1, y1, x2, y2);
+				
+	}
+	std::cout << sum << std::endl;
+}
