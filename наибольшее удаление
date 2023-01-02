@@ -1,0 +1,30 @@
+#include <iostream>
+
+double segment(double x0, double y0, double x1, double y1) {
+	double d = sqrt(pow(x1 - x0, 2) + pow(y1 - y0, 2));
+	return d;
+}
+
+int main()
+{
+	double x0, y0, x1, y1, seg, x0_max, x1_max;
+	double max = -9999;
+	double arr[10][2] = { {3,1},{1,3},{1,5},{2,7},{5,7},{6,5},{7,3},{8,6},{8,4},{5,2} };
+
+	for (int i = 0; i < 10; i++) {
+
+			x0 = arr[i][0];
+			y0 = arr[i][1];
+			for (int j = i + 1; j < 9; j++) {				
+					x1 = arr[j][0];
+					y1 = arr[j][1];
+					seg = segment(x0, y0, x1, y1);
+				if (seg > max) {
+					max = seg;
+					x0_max = x0;
+					x1_max = x1;
+				}
+			}
+	}
+	std::cout << x0_max << " " << x1_max;
+}
