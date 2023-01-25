@@ -1,0 +1,45 @@
+#include <iostream>
+
+int main()
+{
+    setlocale(0, "");
+    double x1, y1, x2, y2, x3, y3, x4, y4, centre_x, centre_y;
+    std::cout << "Введите координату x вершины 1 квадрата:";
+    std::cin >> x1;
+    std::cout << "Введите координату у вершины 1 квадрата:";
+    std::cin >> y1;
+    std::cout << "Введите координату x вершины 2 квадрата:";
+    std::cin >> x2;
+    std::cout << "Введите координату у вершины 2 квадрата:";
+    std::cin >> y2;
+    std::cout << "Введите координату x вершины 3 квадрата:";
+    std::cin >> x3;
+    std::cout << "Введите координату у вершины 3 квадрата:";
+    std::cin >> y3;
+    std::cout << "Введите координату x вершины 4 квадрата:";
+    std::cin >> x4;
+    std::cout << "Введите координату у вершины 4 квадрата:";
+    std::cin >> y4;
+    
+    centre_x = (x1 + x3) / 2;
+    centre_y = (y1 + y3) / 2;
+    std::cout << "Центр в точке: " << centre_x << ";" << centre_y << ". \n";
+
+    centre_x = (x2 + x4) / 2;
+    centre_y = (y2 + y4) / 2;
+    std::cout << "Центр в точке: " << centre_x << ";" << centre_y << ". \n";
+
+    if (centre_x < 0 && centre_y > 0) {
+        std::cout << "1 четверть к.п.";
+    }
+    else if (centre_x > 0 && centre_y > 0) {
+        std::cout << "2 четверть к.п.";
+    }
+    else if (centre_x < 0 && centre_y < 0) {
+        std::cout << "3 четверть к.п.";
+    }
+    else if (centre_x > 0 && centre_y < 0) {
+        std::cout << "4 четверть к.п.";
+    }
+    
+}
