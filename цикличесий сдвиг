@@ -1,0 +1,25 @@
+int main() {
+	setlocale(0, "");
+	const int n = 5;
+	int arr[n] = {1,2,3,4,5};
+
+    int j = 0;
+	int temp1 = arr[j];
+	int temp2;
+	int k = 3;
+
+	for (int i = 0; i < n; i++) {
+		
+		int new_j = (j + k) % n;
+		temp2 = arr[new_j];
+		arr[new_j] = temp1;
+		temp1 = temp2;
+		j = new_j;
+
+				
+	}
+	for (int j = 0; j < 5; j++) {
+		printf("%d ", arr[j]);
+	}
+	
+}
