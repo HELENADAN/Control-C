@@ -1,0 +1,29 @@
+#include <iostream>
+
+int main()
+{
+    int m = 3;
+    int n = 3;
+    int x = 3;
+
+    int arr[3][3] = {{1,2,3}, {3,4,5}, {6,7,8}};
+
+    int fix_i;
+
+    for (int i = 0; i < m; i++) {        
+        if (arr[i][0] > x) {
+            fix_i = i - 1;
+            break;
+        } 
+        
+        else if (i == m - 1) {
+            fix_i = i;
+        }
+    }
+    
+    for (int j = 0; j < n; j++) {
+        if (arr[fix_i][j] == x)
+            std::cout << fix_i << " " << j;
+    }
+} 
+
