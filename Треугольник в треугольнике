@@ -1,0 +1,62 @@
+#include <iostream>
+
+double s_triangle(double x0, double y0, double x1, double y1, double x2, double y2) {
+
+	double d1 = sqrt(pow(x1 - x0, 2) + pow(y1 - y0, 2));
+	double d2 = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+	double d3 = sqrt(pow(x0 - x2, 2) + pow(y0 - y2, 2));
+	double p_2 = ((d1 + d2 + d3) / 2);
+	double p_2_d1 = p_2 - d1;
+	double p_2_d2 = p_2 - d2;
+	double p_2_d3 = p_2 - d3;
+	double s = sqrt(p_2 * p_2_d1 * p_2_d2 * p_2_d3);
+	return s;
+}
+
+int main()
+{
+	setlocale(0, "");
+	
+	int x1 = 2;
+	int y1 = 2;
+	int x2 = 4;
+	int y2 = 6;
+	int x3 = 10;
+	int y3 = 2;
+	
+	int x4 = 4;
+	int y4 = 4;
+	int x5 = 5;
+	int y5 = 3;
+	int x6 = 6;
+	int y6 = 4;
+	
+	double t1 = s_triangle(x1, y1, x2, y2, x3, y3);
+	std::cout << t1 << std::endl;
+	double t2 = s_triangle(x4, y4, x5, y5, x6, y6);
+	std::cout << t2 << std::endl;
+
+	double t1_first = s_triangle(x4, y4, x1, y1, x2, y2);
+	double t2_first = s_triangle(x4, y4, x2, y2, x3, y3);
+	double t3_first = s_triangle(x4, y4, x1, y1, x3, y3);
+
+	double t1_second = s_triangle(x5, y5, x1, y1, x2, y2);
+	double t2_second = s_triangle(x5, y5, x2, y2, x3, y3);
+	double t3_second = s_triangle(x5, y5, x1, y1, x3, y3);
+
+	double t1_third = s_triangle(x6, y6, x1, y1, x2, y2);
+	double t2_third = s_triangle(x6, y6, x2, y2, x3, y3);
+	double t3_third = s_triangle(x6, y6, x1, y1, x3, y3);
+
+	double sum_1 = t1_first + t2_first + t3_first;
+	std::cout << sum_1 << std::endl;
+	double sum_2 = t1_second + t2_second + t3_second;
+	std::cout << sum_2 << std::endl;
+	double sum_3 = t1_third + t2_third + t3_third;
+	std::cout << sum_3 << std::endl;
+
+	if  (sum_1 == t1 && sum_3 == t1 && sum_2 == t1) {
+		std::cout << t1 - t2;
+	}
+}
+
